@@ -1,0 +1,363 @@
+/* Réinitialisation des marges et du padding pour le HTML et le corps */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Le conteneur principal de l'application Vue */
+#app {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* Style pour le canvas, utilisé pour les particules en arrière-plan */
+.background {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Le contenu principal du site */
+#content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  color: #fff;
+}
+
+/* Style général du corps */
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header, main, footer centré dans une largeur maximale */
+header, main, footer {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style pour le header */
+header {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+header figure img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* Style pour les titres */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  font-weight: 400;
+  color: #dbc2a4;
+}
+
+/* Menu de navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Style pour l'élément actif du menu */
+nav ul li a.active {
+  text-decoration: underline;
+} /* Ici, la fermeture manquante a été ajoutée */
+
+/* Conteneur principal */
+.main-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+/* Style pour la section d'information personnelle */
+.container {
+  width: 30%;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-right: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #dbc2a4;
+  padding-bottom: 5px;
+}
+
+/* Style pour les listes d'information */
+.container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.container ul li {
+  background-color: #444;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Conteneur pour les sections d'expérience, de formation, de projets, de témoignages et de contact */
+.container-2 {
+  flex-grow: 1;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les projets */
+.container-2__projects .project-item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-2__projects .project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.container-2__projects .project-item:hover {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Ombre au survol */
+}
+
+.container-2__projects .project-item h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.container-2__projects .project-item p {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Modal pour les projets */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Style pour les témoignages */
+.container-2__testimonials .testimonial-item {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container-2__testimonials .testimonial-item p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.container-2__testimonials .testimonial-item p:nth-child(2) {
+  font-weight: bold;
+}
+
+/* Style pour le formulaire de contact */
+.container-2__contact .form-group {
+  margin-bottom: 15px;
+}
+
+.container-2__contact label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.container-2__contact input,
+.container-2__contact textarea {
+  width: 95%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.container-2__contact textarea {
+  height: 150px;
+}
+
+.container-2__contact button {
+  background-color: #dbc2a4;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.container-2__contact button:hover {
+  background-color: #b89c7a;
+}
+
+/* Style pour le footer */
+footer {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .social-icon img {
+  max-width: 40px;
+  height: auto; 
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+footer .social-icon:hover img {
+  transform: translateY(-5px);
+  opacity: 0.8;
+}
+
+footer .social-icon a[target="_blank"]:hover img {
+  transform: translateY(-5px);
+  opacity: 0.8;
+}
+
+footer p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Ajout d'espace entre les liens dans <address> */
+address {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+address a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Style pour la page 404 */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Occupe toute la hauteur de la fenêtre */
+  text-align: center;
+  padding: 20px;
+}
+
+.not-found h1 {
+  font-size: 5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.not-found p {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.not-found img {
+  max-width: 100%;  /* Limite la largeur maximale de l'image à 100% du conteneur */
+  width: auto;      /* Maintient le ratio d'aspect de l'image */
+  height: auto;     /* Ajuste la hauteur automatiquement en fonction de la largeur */
+  max-height: 400px; /* Limite la hauteur maximale de l'image à 400px */
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} 
+
+
