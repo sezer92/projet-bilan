@@ -17,8 +17,14 @@
     <!-- Inclure Vue Router pour la navigation entre les pages -->
     <script src="https://unpkg.com/vue-router@4"></script>
   
-    <!-- particles.js via CDN -->
+    <!-- Particles.js via CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+    
+    <!-- Axios pour gérer les requêtes HTTP -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- SEO Meta Tag -->
+    <meta name="description" content="Portfolio de SEZER SEZER, développeur web junior. Découvrez mes créations, mon expérience et contactez-moi.">
 </head>
 <body>
     <!-- Le conteneur global de l'application Vue -->
@@ -26,9 +32,9 @@
         <!-- Canvas pour les particules en arrière-plan -->
         <canvas class="background"></canvas>
         <div id="content">
-           <!-- Contenu principal du portfolio -->
-    <router-view></router-view>
-
+            <!-- Contenu principal du portfolio -->
+            <router-view></router-view>
+        </div>
     </div>
 
     <!-- Fichier JS principal -->
