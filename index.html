@@ -17,9 +17,6 @@
     <!-- Inclure Vue Router pour la navigation entre les pages -->
     <script src="https://unpkg.com/vue-router@4"></script>
   
-    <!-- Particles.js via CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
-    
     <!-- Axios pour gérer les requêtes HTTP -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -30,7 +27,7 @@
     <!-- Le conteneur global de l'application Vue -->
     <div id="app">
         <!-- Canvas pour les particules en arrière-plan -->
-        <canvas class="background"></canvas>
+        <div class="background"></div>
         <div id="content">
             <!-- Contenu principal du portfolio -->
             <router-view></router-view>
@@ -41,5 +38,3 @@
     <script src="main.js"></script>
 </body>
 </html>
-
-

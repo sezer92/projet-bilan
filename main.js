@@ -1,37 +1,6 @@
 window.onload = function() {
     console.log("Script chargé, démarrage de l'initialisation");
 
-    // Initialisation des particules
-    console.log("Initialisation des particules...");
-    Particles.init({
-        selector: '.background',
-        maxParticles: 100,
-        color: '#000000',
-        connectParticles: false,
-        sizeVariations: 5,
-        responsive: [
-            {
-                breakpoint: 768,
-                options: {
-                    maxParticles: 50
-                }
-            }
-        ]
-    });
-
-    console.log("Particles.js initialisé");
-
-    // Fonction pour redimensionner le canvas des particules pour couvrir toute la page
-    function resizeCanvas() {
-        const canvas = document.querySelector('.background');
-        canvas.width = window.innerWidth;
-        canvas.height = document.documentElement.scrollHeight;
-        console.log("Canvas redimensionné");
-    }
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
     // Définir les composants de Vue
     const HomeComponent = {
         template: `
@@ -162,6 +131,7 @@ window.onload = function() {
                         <p>Date de création : {{ selectedProject.date }}</p>
                         <p>Technologies utilisées : {{ selectedProject.technologies }}</p>
                         <a :href="selectedProject.link" target="_blank">Voir le projet</a>
+                        <span style="margin-left: 20px;"></span> <!-- Espace entre les liens -->
                         <a :href="selectedProject.github" target="_blank">Repository GitHub</a>
                     </div>
                 </div>
@@ -337,11 +307,6 @@ window.onload = function() {
         mounted() {
             window.addEventListener('hashchange', this.updateActiveLink);
             this.updateActiveLink(); // Mettre à jour au premier rendu
-
-            // Ajout pour éviter le scroll en bas à l'ouverture
-            if (!window.location.hash) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
         }
     };
 
@@ -365,7 +330,7 @@ window.onload = function() {
                     behavior: 'smooth',
                 };
             }
-            return { top: 0 }; // Défaut: remonter en haut de la page
+            return { top: 0 };
         },
         routes: [
             { path: '/', component: HomeComponent },
