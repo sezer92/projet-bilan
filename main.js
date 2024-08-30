@@ -16,7 +16,7 @@ window.onload = function() {
                 <nav>
                     <ul>
                         <li><router-link :to="{ hash: '#presentation' }">Présentation</router-link></li>
-                        <li><router-link :to="{ hash: '#creations' }">Créations</router-link></li>
+                        <li><router-link :to="{ hash: '#projets' }">Créations</router-link></li>
                         <li><router-link :to="{ hash: '#contact' }">Contact</router-link></li>
                     </ul>
                 </nav>
@@ -81,7 +81,7 @@ window.onload = function() {
                         </div>
 
                         <!-- Section pour les projets -->
-                        <div class="container-2__projects">
+                        <div class="container-2__projects" id="projets">
                             <h2>Projets</h2>
                             <div v-for="project in projects" :key="project.title" class="project-item" @click="openModal(project)">
                                 <img :src="project.image" :alt="project.title">
@@ -295,7 +295,7 @@ window.onload = function() {
                 return window.location.hash === section;
             },
             updateActiveLink() {
-                const sections = ['#presentation', '#creations', '#contact'];
+                const sections = ['#presentation', '#projets', '#contact'];
                 sections.forEach(section => {
                     const link = document.querySelector(`a[href="${section}"]`);
                     if (link) {
